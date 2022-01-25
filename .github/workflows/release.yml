@@ -30,4 +30,4 @@ jobs:
         run: echo "version=$(echo -n \"$GITHUB_REF\" | sed 's%refs/tags/%%' | tr -d v)" >> $GITHUB_ENV
         shell: bash
       - name: Push
-        run: choco push wash.${{ env.version }}.nupkg -k ${{ secrets.api-key }} -s https://push.chocolatey.org/
+        run: choco push wash.${{ env.version }}.nupkg -k ${{ secrets.apiKey }} -s https://push.chocolatey.org/

@@ -9,7 +9,7 @@ $packageArgs = @{
   fileFullPath  = "$toolsDir\wash.exe"
   url64bit      = $url64
 
-  checksum64    = '4030ba9537758f8432c062137615431e8d3705ca61fdaaa2cb4b5f925129a013'
+  checksum64    = '4030BA9537758F8432C062137615431E8D3705CA61FDAAA2CB4B5F925129A013'
   checksumType64= 'sha256'
 }
 

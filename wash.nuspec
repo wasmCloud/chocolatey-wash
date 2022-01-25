@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>wash</id>
+  
+    <version>0.8.1</version>
+
+    <title>wash (Install)</title>
+    <authors>wasmCloud Maintainers</authors>
+    <projectUrl>https://wasmcloud.dev</projectUrl>
+    <iconUrl>https://wasmcloud.dev/images/banner.png</iconUrl>
+    <licenseUrl>https://github.com/wasmCloud/wash/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/wasmcloud/wash</projectSourceUrl>
+    <docsUrl>https://wasmcloud.dev</docsUrl>
+    <bugTrackerUrl>https://github.com/wasmCloud/wash/issues</bugTrackerUrl>
+    <tags>wash wasmCloud wasm</tags>
+    <summary>WAsmcloud SHell - A multi-tool for various wasmCloud interaction</summary>
+    <description>WAsmcloud SHell - A multi-tool for various wasmCloud interaction</description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

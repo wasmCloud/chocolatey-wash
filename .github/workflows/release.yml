@@ -1,0 +1,33 @@
+name: Build and Release
+
+on:
+  push:
+    branches: [main]
+    tags:
+      - "v*"
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: choco pack
+      - name: Make sure it will install
+        run: choco install wash -y -dv -s .
+
+  release:
+    needs: [check]
+    runs-on: windows-latest
+    if: startswith(github.ref, 'refs/tags/')
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: choco pack
+      - name: Get version
+        run: echo "version=$(echo -n \"$GITHUB_REF\" | sed 's%refs/tags/%%' | tr -d v)" >> $GITHUB_ENV
+        shell: bash
+      - name: Push
+        run: choco push wash.${{ env.version }}.nupkg -k ${{ secrets.api-key }}

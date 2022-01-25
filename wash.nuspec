@@ -6,18 +6,20 @@
   
     <version>0.8.1</version>
 
-    <title>wash (Install)</title>
+    <title>wash</title>
     <authors>wasmCloud Maintainers</authors>
     <projectUrl>https://wasmcloud.dev</projectUrl>
     <iconUrl>https://wasmcloud.dev/images/banner.png</iconUrl>
     <licenseUrl>https://github.com/wasmCloud/wash/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/wasmcloud/wash</projectSourceUrl>
+    <packageSourceUrl>https://github.com/wasmCloud/chocolatey-wash</packageSourceUrl>
     <docsUrl>https://wasmcloud.dev</docsUrl>
     <bugTrackerUrl>https://github.com/wasmCloud/wash/issues</bugTrackerUrl>
     <tags>wash wasmCloud wasm</tags>
     <summary>WAsmcloud SHell - A multi-tool for various wasmCloud interaction</summary>
     <description>WAsmcloud SHell - A multi-tool for various wasmCloud interaction</description>
+    <releaseNotes>https://github.com/wasmCloud/wash/releases/tag/v0.8.1</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

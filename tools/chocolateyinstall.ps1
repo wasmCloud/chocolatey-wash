@@ -2,14 +2,14 @@
 $ErrorActionPreference = 'Stop'; # stop on all errors
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url64      = 'https://github.com/wasmCloud/wash/releases/download/v0.8.1/wash.exe'
+$url64      = 'https://github.com/wasmCloud/wash/releases/download/v0.9.0/wash.exe'
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   fileFullPath  = "$toolsDir\wash.exe"
   url64bit      = $url64
 
-  checksum64    = '4030BA9537758F8432C062137615431E8D3705CA61FDAAA2CB4B5F925129A013'
+  checksum64    = '2B13D03D2FAE38E381425D98B777D29BAA68035B3CB3A7A7494578448EE6FAE8'
   checksumType64= 'sha256'
 }
 

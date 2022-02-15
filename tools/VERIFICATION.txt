@@ -1,4 +1,0 @@
-﻿This Chocolatey source is provided by the maintainers of wash and wasmCloud
-
-VERIFICATION
-You can validate the checksum in this package matches by downloading wash from the Github release pages

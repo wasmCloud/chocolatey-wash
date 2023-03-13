@@ -4,7 +4,7 @@
   <metadata>
     <id>wash</id>
   
-    <version>0.15.1</version>
+    <version>0.16.1</version>
 
     <title>wash</title>
     <authors>wasmCloud Maintainers</authors>
@@ -19,7 +19,7 @@
     <tags>wash wasmCloud wasm</tags>
     <summary>WAsmcloud SHell - A multi-tool for various wasmCloud interaction</summary>
     <description>WAsmcloud SHell - A multi-tool for various wasmCloud interaction</description>
-    <releaseNotes>https://github.com/wasmCloud/wash/releases/tag/v0.15.1</releaseNotes>
+    <releaseNotes>https://github.com/wasmCloud/wash/releases/tag/v0.16.1</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

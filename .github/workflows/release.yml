@@ -35,7 +35,7 @@ jobs:
         with:
           commit-message: bump wash to v${{ inputs.wash_version }}
           title: wash v${{ inputs.wash_version }}
-          body: This is the release of wash v${{ inputs.wash_version }}. Once tests pass properly, add the `pr-pull` label to this PR to release.
+          body: This is the release of wash v${{ inputs.wash_version }}. Once tests pass properly, simply merge and then cut a tag from `main` for this version.
           branch: release/v${{ inputs.wash_version }}
           signoff: true
 

@@ -1,0 +1,16 @@
+
+$ErrorActionPreference = 'Stop'; # stop on all errors
+$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+
+$url64      = 'WASMCLOUD_URL'
+
+$packageArgs = @{
+  packageName   = $env:ChocolateyPackageName
+  fileFullPath  = "$toolsDir\wash.exe"
+  url64bit      = $url64
+
+  checksum64    = 'WASMCLOUD_SHA'
+  checksumType64= 'sha256'
+}
+
+Get-ChocolateyWebFile @packageArgs 

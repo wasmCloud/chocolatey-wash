@@ -11,7 +11,7 @@ jobs:
   update-release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Prepare Formula
         env:
           WASMCLOUD_URL: https://github.com/wasmCloud/wash/releases/download/v${{ inputs.wash_version }}/wash.exe

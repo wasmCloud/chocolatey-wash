@@ -10,16 +10,16 @@
     <authors>wasmCloud Maintainers</authors>
     <projectUrl>https://wasmcloud.com</projectUrl>
     <iconUrl>https://wasmcloud.com/img/wasmcloud_icon.png</iconUrl>
-    <licenseUrl>https://github.com/wasmCloud/wash/blob/main/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/wasmCloud/wasmCloud/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <projectSourceUrl>https://github.com/wasmcloud/wash</projectSourceUrl>
+    <projectSourceUrl>https://github.com/wasmCloud/wasmCloud/tree/main/crates/wash-cli</projectSourceUrl>
     <packageSourceUrl>https://github.com/wasmCloud/chocolatey-wash</packageSourceUrl>
     <docsUrl>https://wasmcloud.com</docsUrl>
-    <bugTrackerUrl>https://github.com/wasmCloud/wash/issues</bugTrackerUrl>
+    <bugTrackerUrl>https://github.com/wasmCloud/wasmCloud/issues?q=is%3Aopen+is%3Aissue+label%3Awash-cli</bugTrackerUrl>
     <tags>wash wasmCloud wasm</tags>
     <summary>WAsmcloud SHell - the comprehensive command-line tool for wasmCloud development</summary>
     <description>WAsmcloud SHell - the comprehensive command-line tool for wasmCloud development</description>
-    <releaseNotes>https://github.com/wasmCloud/wash/releases/tag/vWASMCLOUD_VERSION</releaseNotes>
+    <releaseNotes>https://github.com/wasmCloud/wasmCloud/releases/tag/wash-cli-vWASMCLOUD_VERSION</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

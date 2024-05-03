@@ -1,6 +1,8 @@
 name: Update
 
 on:
+  repository_dispatch:
+    types: [choco-formula-update]
   workflow_dispatch:
     inputs:
       wash_version:
@@ -12,21 +14,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Prepare Formula
-        env:
-          WASMCLOUD_URL: https://github.com/wasmCloud/wasmCloud/releases/download/wash-cli-v${{ inputs.wash_version}}/wash-x86_64-pc-windows-msvc.exe
+      - name: Set version
+        if: github.event_name == 'workflow_dispatch'
         run: |
-          wasmcloud_url=$WASMCLOUD_URL
-          wasmcloud_sha=$(curl -sL $WASMCLOUD_URL | shasum -a 256 | cut -d ' ' -f 1 | tr '[:lower:]' '[:upper:]')
-          wasmcloud_version=${{ inputs.wash_version }}
+          echo "wash_version=${{ inputs.wash_version }}" >> $GITHUB_ENV
+      - name: Set Variables
+        if: github.event_name == 'repository_dispatch'
+        run: |
+          echo "wash_version=${{ github.event.client_payload.wash_version }}" >> $GITHUB_ENV
+      - name: Prepare Formula
+        run: |
+          wasmcloud_version=${{ env.wash_version }}
+          wasmcloud_url=https://github.com/wasmCloud/wasmCloud/releases/download/wash-cli-v$wasmcloud_version/wash-x86_64-pc-windows-msvc.exe
+          wasmcloud_sha=$(curl -sL $wasmcloud_url | shasum -a 256 | cut -d ' ' -f 1 | tr '[:lower:]' '[:upper:]')
 
           cat ./template/chocolateyinstall.txt | sed "s|WASMCLOUD_URL|$wasmcloud_url|" | sed "s|WASMCLOUD_SHA|$wasmcloud_sha|" > tools/chocolateyinstall.ps1
           cat ./template/wash.txt | sed "s|WASMCLOUD_VERSION|$wasmcloud_version|" > wash.nuspec
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          commit-message: bump wash to v${{ inputs.wash_version }}
-          title: wash v${{ inputs.wash_version }}
-          body: This is the release of wash v${{ inputs.wash_version }}. Once tests pass properly, simply merge and then cut a tag from `main` for this version.
-          branch: release/v${{ inputs.wash_version }}
+          commit-message: bump wash to v${{ env.wash_version }}
+          title: wash v${{ env.wash_version }}
+          body: This is the release of wash v${{ env.wash_version }}. Once tests pass properly, simply merge and then cut a tag from `main` for this version.
+          branch: release/v${{ env.wash_version }}
           signoff: true

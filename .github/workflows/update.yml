@@ -8,7 +8,7 @@ on:
       wash_version:
         description: "Version of wash, without the `v`, to release to chocolatey"
         required: true
-        default: "0.18.0"
+        default: "0.28.0"
 jobs:
   update-release:
     runs-on: ubuntu-latest
@@ -31,7 +31,7 @@ jobs:
           cat ./template/chocolateyinstall.txt | sed "s|WASMCLOUD_URL|$wasmcloud_url|" | sed "s|WASMCLOUD_SHA|$wasmcloud_sha|" > tools/chocolateyinstall.ps1
           cat ./template/wash.txt | sed "s|WASMCLOUD_VERSION|$wasmcloud_version|" > wash.nuspec
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v6
         with:
           commit-message: bump wash to v${{ env.wash_version }}
           title: wash v${{ env.wash_version }}

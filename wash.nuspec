@@ -4,7 +4,7 @@
   <metadata>
     <id>wash</id>
   
-    <version>0.30.0</version>
+    <version>0.31.0</version>
 
     <title>wash</title>
     <authors>wasmCloud Maintainers</authors>
@@ -19,7 +19,7 @@
     <tags>wash wasmCloud wasm</tags>
     <summary>WAsmcloud SHell - the comprehensive command-line tool for wasmCloud development</summary>
     <description>WAsmcloud SHell - the comprehensive command-line tool for wasmCloud development</description>
-    <releaseNotes>https://github.com/wasmCloud/wasmCloud/releases/tag/wash-cli-v0.30.0</releaseNotes>
+    <releaseNotes>https://github.com/wasmCloud/wasmCloud/releases/tag/wash-cli-v0.31.0</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
